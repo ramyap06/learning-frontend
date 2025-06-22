@@ -1,0 +1,179 @@
+body {
+    background-color: pink;
+    color: coral;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+
+    /* same as this */
+    font: normal 16px Arial, Helvetica, sans-serif;
+
+    line-height: 1.6em;
+}
+
+a {
+    text-decoration: none;
+    color:black;
+}
+
+a:hover {
+    color:red;
+}
+
+a:active {
+    color:green;
+}
+
+/* a:visited {
+    color: maroon;
+} */
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.button {
+    background: maroon;
+    color: coral;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    border: none;
+}
+
+.button:hover {
+    background: white;
+    color: red;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.box_1 {
+    background: black;
+    color: white;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    /* same as this */
+    padding: 20px;
+
+    border-top: 10px coral dotted;
+    border-right: 10px coral dotted;
+    border-bottom: 10px coral dotted;
+    border-left: 10px coral dotted;
+
+    /* same as this */
+    border: 10px coral dotted;
+
+    margin-top: 20px;
+    margin: 20px 0;
+}
+
+.box_1 h1 {
+    color: pink;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 800;
+    font-style: italic;
+    text-decoration: underline;
+    text-transform: lowercase;
+    letter-spacing: 0.2em;
+}
+
+.box_2 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 20px;
+    border: 5px black solid;
+    margin: 20px 0;
+}
+
+.box_3 {
+    padding: 20px;
+    border: 5px maroon solid;
+    margin: 20px 0;
+}
+
+.box_3 h1 {
+    color: maroon;
+    text-align: center;
+}
+
+.box_3 ul {
+    padding: 0;
+    list-style: none;
+}
+
+.box_3 li {
+    padding-left: 20px;
+    padding-bottom: 8px;
+    border-bottom: dotted 2px maroon;
+    background-image: url('star.png');
+    background-repeat: no-repeat;
+    background-size: 15px 15px;
+    background-position: 0px 4px;
+}
+
+.my_form {
+    padding: 20px;
+}
+
+.my_form .form_group {
+    padding-bottom: 15px;
+}
+
+.my_form label {
+    display: block;
+}
+
+.my_form input[type="text"], input[type="email"], textarea {
+    padding: 8px;
+    width: 100%;
+}
+
+.block {
+    float: left;
+    width: 33.3%; /* 1/3 = 0.333333 */
+    border: 1px solid mediumaquamarine;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+#main_bar {
+    float: left;
+    width: 70%;
+}
+
+#side_bar {
+    float: right;
+    width: 30%;
+}
+
+.p_box {
+    width: 550px;
+    height: 500px;
+    border: 1px solid black;
+    margin-top: 30px;
+    position: relative;
+    color: black;
+    background-image: url('hearts.jpg');
+    background-position: center center;
+}
+
+.p_box h1 {
+    position: absolute;
+    top: 40px;
+    left: 60px;
+}
+
+.p_box h2 {
+    position: absolute;
+    top: 100px;
+    left: 160px;
+}
