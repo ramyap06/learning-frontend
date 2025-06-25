@@ -8,6 +8,7 @@ console.log(win_msg.length);
 
 let counter = 1;
 let gameOver = true;
+let winner = 0;
 
 const board = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
@@ -19,9 +20,10 @@ player1.style.color = 'white';
 for (let i = 0; i < 9; i++) {
     box[i].addEventListener('click', (e) => boxClicked(e, i));
 }
+reset_btn.addEventListener('click', reset);
 
 function boxClicked(e, i) {
-    if (board[i] === 0) {
+    if (board[i] === 0 && winner === 0) {
         if (counter % 2 === 1) {
             console.log('Player 1 Turn');
             box[i].style.backgroundImage = "url('blue-circle.png')";
@@ -49,7 +51,7 @@ function boxClicked(e, i) {
 
             board[i] = 2;
         }
-        const winner = playerWin();
+        winner = playerWin();
         if (winner !== 0) {
             if (winner === 1) {
                 console.log('Congrats Player 1!');
@@ -62,7 +64,6 @@ function boxClicked(e, i) {
             }
             reset_btn.style.background = 'palevioletred';
             reset_btn.style.color = 'maroon';
-            reset_btn.addEventListener('click', reset);
         }
 
         for (let i = 0; i < 9; i++) {
@@ -75,7 +76,6 @@ function boxClicked(e, i) {
             win_msg[1].style.color = 'white';
             reset_btn.style.background = 'palevioletred';
             reset_btn.style.color = 'maroon';
-            reset_btn.addEventListener('click', reset);
         } else {
             gameOver = true;
         }
