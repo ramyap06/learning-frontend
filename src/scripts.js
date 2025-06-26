@@ -64,20 +64,20 @@ function boxClicked(e, i) {
             }
             reset_btn.style.background = 'palevioletred';
             reset_btn.style.color = 'maroon';
-        }
-
-        for (let i = 0; i < 9; i++) {
-            if (board[i] === 0) {
-                gameOver = false;
-            }
-        }
-        if (gameOver) {
-            win_msg[1].style.background = 'purple';
-            win_msg[1].style.color = 'white';
-            reset_btn.style.background = 'palevioletred';
-            reset_btn.style.color = 'maroon';
         } else {
-            gameOver = true;
+            for (let i = 0; i < 9; i++) {
+                if (board[i] === 0) {
+                    gameOver = false;
+                }
+            }
+            if (gameOver) {
+                win_msg[1].style.background = 'purple';
+                win_msg[1].style.color = 'white';
+                reset_btn.style.background = 'palevioletred';
+                reset_btn.style.color = 'maroon';
+            } else {
+                gameOver = true;
+            }
         }
 
         counter++;
@@ -130,5 +130,6 @@ function reset() {
 
         reset_btn.style.background = 'white';
         reset_btn.style.color = 'white';
+        winner = 0;
     }
 }
