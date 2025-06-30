@@ -91,10 +91,28 @@ for (let i = 0; i < odd.length; i++) {
 */
 var itemList = document.querySelector('#item');
 
-// parentNode
+// parent
 console.log(itemList.parentNode);
 console.log(itemList.parentNode.parentNode);
+itemList.parentNode.style.backgroundColor = 'grey';
 
-// parentElement
 console.log(itemList.parentElement);
 console.log(itemList.parentElement.parentElement);
+
+// child
+console.log(itemList.childNodes); // gives array of children but says text where there is a break, Node List
+console.log(itemList.children); // gives arrays efficiently, HTML collection
+
+console.log(itemList.firstChild); // again puts text where there's line break
+console.log(itemList.firstElementChild); // use this instead
+console.log(itemList.lastChild);
+console.log(itemList.lastElementChild);
+
+// sibling
+console.log(itemList.nextSibling); // don't use
+
+console.lof(itemList.nextElementSibling);
+console.log(itemList.previousElementSibling);
+
+
+// CREATING AND INSERTING ELEMENTS
