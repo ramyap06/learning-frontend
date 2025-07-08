@@ -116,3 +116,89 @@ console.log(itemList.previousElementSibling);
 
 
 // CREATING AND INSERTING ELEMENTS
+
+// making a div
+var newDiv = document.createElement('div');
+newDiv.className = 'hello';
+newDiv.id = 'goodbye';
+newDiv.setAttribute('title', 'Hello Div');
+console.log(newDiv);
+
+// adding text to the div
+var newDivText = document.createTextNode('Hello World');
+newDiv.appendChild(newDivText);
+
+// inserting div into DOM
+var container = document.querySelector('header .container');
+var h1 = document.querySelector('header h1');
+newDiv.style.fontSize = '30px';
+
+container.insertBefore(newDiv, h1); // object.insertBefore(object_to_insert, where_to_insert);
+
+
+// ADD EVENT LISTENER
+
+// click actions
+var button = document.getElementById('button').addEventListener('click', buttonClick);
+function buttonClick(e) {
+    document.querySelectorAll('.btn')[1].style.backgroundColor = 'red';
+    alert(1);
+    console.log(e.target);
+    console.log(e.target.id);
+    console.log(e.target.className);
+    console.log(e.target.classList);
+    var output = document.getElementById('output');
+    output.innerHTML = '<h3>+e.target.id+</h3>';
+    console.log(e.type);
+    console.log(e.clientX);
+    console.log(e.clientY);
+    console.log(e.offsetX);
+    console.log(e.offsetY);
+    console.log(e.altKey);
+    console.log(e.ctrlKey);
+    console.log(e.shiftKey);
+}
+
+// mouse actions
+button.addEventListener('click', runEvent);
+button.addEventListener('dblclick', runEvent);
+button.addEventListener('mousedown', runEvent);
+button.addEventListener('mouseup', runEvent);
+button.addEventListener('mouseenter', runEvent); // only element itself
+button.addEventListener('mouseover', runEvent); // for inner elements and element itself
+button.addEventListener('mouseleave', runEvent); // opposite of mouse enter
+button.addEventListener('mouseout', runEvent); // opposite of mouse over
+button.addEventListener('mousemove', runEvent); // while in there and moving mouse
+
+var itemInput = document.querySelector('input[type="text"]');
+var form = document.querySelector('form');
+var select = document.querySelector('select');
+
+itemInput.addEventListener('keydown', runEvent); // when you press down a key when typing in input box
+select.addEventListener('change', runEvent); // with a dropdown, when the option is changed
+select.addEventListener('input', runEvent); // does same thing
+form.addEventListener('submit', runEvent);
+
+function runEvent(e) {
+    console.log('EVENT TYPE: ' + e.type);
+
+    e.preventDefault(); // prevents submit button from submitting to external file
+
+    // can access body by doing document.body
+    button.style.backgroundColor = 'rgb("+e.offsetX+", "+e.offsetY+", 40)'; // when i move the mouse in the button the color with change based on it's position
+    console.log(e.target.value); // shows the value aka what is being typed for keydown/changed for dropdown
+
+}
+
+/* 
+
+- createElement to make a new element
+- give it the same class as the elements you add it in using .className
+- appendChild onto a parent element
+- removeChild(element)
+- Array.from(items)
+- .forEach to make a filter
+- item.style.display = 'block' --> shows the item in display
+- item.style.display = 'none' --> hides the item in display
+
+*/
